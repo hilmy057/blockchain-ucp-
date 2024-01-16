@@ -59,7 +59,7 @@
     },
     {
       "inputs": [],
-      "name": "getMemos",
+      "name": "mos",
       "outputs": [
         {
           "components": [

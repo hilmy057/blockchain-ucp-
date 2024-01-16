@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   // Contract Address & ABI
-  const contractAddress = "0xDBa03676a2fBb6711CB652beF5B7416A53c1421D";
+  const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
   const contractABI = abi.abi;
 
   // Component state
@@ -166,64 +166,65 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Buy Albert a Coffee!</title>
+        <title>Sawer</title>
         <meta name="description" content="Tipping site" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Buy Albert a Coffee!
+        Belikan Aku Kopi
         </h1>
         
         {currentAccount ? (
           <div>
-            <form>
-              <div class="formgroup">
-                <label>
-                  Name
-                </label>
-                <br/>
-                
-                <input
-                  id="name"
-                  type="text"
-                  placeholder="anon"
-                  onChange={onNameChange}
-                  />
-              </div>
-              <br/>
-              <div class="formgroup">
-                <label>
-                  Send Albert a message
-                </label>
-                <br/>
+           <form>
+  <div className={styles.formgroup}>
+    <label>
+      Nama
+    </label>
+    <br/>
+    
+    <input
+      id="name"
+      type="text"
+      placeholder="anon"
+      onChange={onNameChange}
+    />
+  </div>
+  <br/>
+  <div className={styles.formgroup}>
+    <label>
+      Kirim pesan ke Rifa
+    </label>
+    <br/>
 
-                <textarea
-                  rows={3}
-                  placeholder="Enjoy your coffee!"
-                  id="message"
-                  onChange={onMessageChange}
-                  required
-                >
-                </textarea>
-              </div>
-              <div>
-                <button
-                  type="button"
-                  onClick={buyCoffee}
-                >
-                  Send 1 Coffee for 0.001ETH
-                </button>
-              </div>
-            </form>
+    <textarea
+      rows={3}
+      placeholder="Nikmati Kopi mu"
+      id="message"
+      onChange={onMessageChange}
+      required
+    >
+    </textarea>
+  </div>
+  <div>
+    <button
+      type="button"
+      onClick={buyCoffee}
+    >
+      Kirim 1 Kopi Seharga 0.001ETH
+    </button>
+  </div>
+</form>
+
           </div>
         ) : (
-          <button onClick={connectWallet}> Connect your wallet </button>
+          <button onClick={connectWallet}> Sambungkan Dompet </button>
         )}
       </main>
 
-      {currentAccount && (<h1>Memos received</h1>)}
+      {currentAccount && (<h1></h1>)}
 
       {currentAccount && (memos.map((memo, idx) => {
         return (
@@ -234,15 +235,6 @@ export default function Home() {
         )
       }))}
 
-      <footer className={styles.footer}>
-        <a
-          href="https://alchemy.com/?a=roadtoweb3weektwo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by @thatguyintech for Alchemy's Road to Web3 lesson two!
-        </a>
-      </footer>
     </div>
   )
 }
